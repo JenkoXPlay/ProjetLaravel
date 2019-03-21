@@ -9,4 +9,5 @@ class Chanson extends Model  {
     public function utilisateur() {
         return $this->belongsTo("App\User", "utilisateur_id");
     }
+
 }

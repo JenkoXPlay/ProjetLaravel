@@ -11,34 +11,43 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
+
 <header>
     <a href="{{ url('/') }}">
         {{ config('app.name', 'Laravel') }}
     </a>
 </header>
-<!-- Authentication Links -->
-<nav>
-    <ul>
-        @guest
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
-        @else
-            <li> Bonjour {{ Auth::user()->name }}</li>
-            <li><a href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                    Logout
-                </a></li>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
-        @endguest
-    </ul>
-</nav>
-<div id="main">
-    @yield('content')
-</div>
-<!-- Scripts -->
-<script src="{{ asset('js/jquery.js') }}"></script>
+
+    <!-- Authentication Links -->
+    <nav>
+        <ul>
+            @guest
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Register</a></li>
+            @else
+                <li> Bonjour {{ Auth::user()->name }}</li>
+                <li><a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                        Logout
+                    </a></li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            @endguest
+        </ul>
+    </nav>
+        
+    <audio id="audio" controls>
+        <source src="" type="audio/mpeg">
+    </audio>
+
+    <div id="main">
+        @yield('content')
+    </div>
+    <!-- Scripts -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/audio.js') }}"></script>
+
 </body>
 </html>

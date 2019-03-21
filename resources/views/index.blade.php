@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    A vous de travailler maintenant :)
+
+    <h3>Go écouter des musiques !</h3>
+
+    @foreach($chansons as $c)
+        <a class="chanson" data-file='{{ $c->fichier }}' href="#">{{ $c->nom }}</a>
+    @endforeach
 
 @endsection
