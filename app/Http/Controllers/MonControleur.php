@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Chanson;
+use App\User;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,5 +31,13 @@ class MonControleur extends Controller
 
         $c->save();
         return back();
+    }
+
+    public function utilisateur($id) {
+        $utilisateur = User::find($id);
+        if ($utilisateur == false) {
+            abort(404);
+        }
+        return view("utilisateur", ['utilisateur' => $utilisateur]);
     }
 }
