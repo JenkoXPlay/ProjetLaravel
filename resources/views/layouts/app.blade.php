@@ -42,12 +42,18 @@
         <source src="" type="audio/mpeg">
     </audio>
 
+    <form id="search">
+        <input type="search" name="search" placeholder="Votre recherche" required />
+        <input type="submit" />
+    </form>
+
     <div id="main">
         @yield('content')
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/audio.js') }}"></script>
+    <script src="{{ asset('js/search.js') }}"></script>
 
 </body>
 </html>

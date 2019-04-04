@@ -40,4 +40,19 @@ class MonControleur extends Controller
         }
         return view("utilisateur", ['utilisateur' => $utilisateur]);
     }
+
+    public function suivi($id) {
+        $utilisateur = User::find($id);
+        if ($utilisateur == false) {
+            abort(403);
+        }
+        Auth::user()->jeLesSuit()->toggle($id);
+        return back();
+    }
+
+    public function recherche($s) {
+        $users = User::whereRaw("name LIKE CONCAT(?, '%')", [$s])->get();
+        $chansons = Chanson::whereRaw("nom LIKE CONCAT(?, '%')", [$s])->get();
+        return view("recherche", ["utilisateurs" => $users, "chansons" => $chansons]);
+    }
 }
