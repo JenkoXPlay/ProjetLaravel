@@ -4,4 +4,3 @@
 @else
     @include('layouts.full')
 @endif
-

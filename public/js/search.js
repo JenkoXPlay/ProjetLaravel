@@ -6,4 +6,4 @@ $(document).ready(function () {
 });
 
 
-$(document).pjax('[data-pjax] a, a[data-pjax]', '#main');
+$(document).pjax('a[data-pjax]', '#main');

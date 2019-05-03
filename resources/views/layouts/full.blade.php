@@ -8,7 +8,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
-<!-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> -->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/spectre-icons.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 
     <!-- Scripts -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
@@ -18,44 +20,58 @@
 </head>
 <body>
 
-<header>
-    <a href="{{ url('/') }}">
+<!-- <header>
+    <a data-pjax href="{{ url('/') }}">
         {{ config('app.name', 'Laravel') }}
     </a>
-</header>
+</header> -->
 
 <!-- Authentication Links -->
-<nav>
-    <ul>
+<div class="menu">
+    <a data-pjax href="{{ url('/') }}">
+        <img src="/img/logo.png" class="logo" />
+    </a>
+
+    <div class="contentMenu">
         @guest
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
+            <a href="{{ route('login') }}">Login</a>
+            <a href="{{ route('register') }}">Register</a>
         @else
-            <li> Bonjour {{ Auth::user()->name }}</li>
-            <li><a href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                    Logout
-                </a></li>
-            <li><a data-pjax href="/nouvelle">Uploader une chanson</a></li>
+            <span class="title">Bonjour {{ Auth::user()->name }}</span>
+            <br /><br />
+            <a href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                    Déconnexion
+            </a>
+            <a data-pjax href="/nouvelle">Uploader une chanson</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form>
-
-
-
         @endguest
-    </ul>
-</nav>
 
-<audio id="audio" controls>
-    <source src="" type="audio/mpeg">
-</audio>
+        <div class="separator"></div>
 
-<form id="search">
-    <input type="search" name="search" placeholder="Votre recherche" required />
-    <input type="submit" />
-</form>
+        sdfdsf
+    </div>
+</div>
+
+<div class="searchBar">
+    <form class="search" id="search">
+        <span class="loupe"><i class="icon icon-search"></i></span>
+        <input type="search" name="search" placeholder="Votre recherche" required />
+        <input type="submit" />
+    </form>
+
+    <audio class="player" id="audio" controls>
+        <source src="" type="audio/mpeg">
+    </audio>
+</div>
+
+<div class="cover">
+    <div class="coverImg"></div>
+    <img src="/img/trans.png" class="trans" />
+</div>
 
 <div id="main">
     @yield('content')

@@ -1,0 +1,141 @@
+@font-face {
+    font-family: Monserrat;
+    src: url("/css/montserrat/Monserrat-Regular.ttf");
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Montserrat;
+}
+
+/* menu */
+.menu {
+    z-index: 99999;
+    background: #111c30;
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    color: #fff;
+    padding: 10px;
+}
+
+.menu .logo {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.menu .contentMenu {
+    padding-left: 20px;
+    text-align: left;
+}
+.menu .contentMenu .title {
+    font-weight: 500;
+    font-size: 1.2em;
+}
+.menu .contentMenu a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.menu .contentMenu a:hover {
+    text-decoration: underline;
+}
+
+.menu .contentMenu .separator {
+    background: #fff;
+    width: 80%;
+    height: 1px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* fin menu */
+
+
+/* searchBar */
+.searchBar {
+    background: #fff;
+    float: right;
+    width: 80%;
+    top: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.searchBar .search {
+    margin-left: 10%;
+    display: flex;
+}
+.searchBar .search .loupe {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-radius: 50px 0 0 50px;
+    padding: 5px;
+}
+.searchBar .search input[type=search] {
+    border: none;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 5px;
+}
+.searchBar .search input[type=submit] {
+    border: 1px solid #000;
+    background: #162547;
+    padding: 5px 15px 5px 15px;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s;
+    border-radius: 0 50px 50px 0;
+}
+.searchBar .search input[type=submit]:hover {
+    background: #fff;
+    color: #162547;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.searchBar .player {
+    display: inline-block;
+    height: 30px;
+}
+/* fin searchBar */
+
+/* cover */
+.cover {
+    background: #fff;
+    float: right;
+    width: 80%;
+    height: 250px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.cover .coverImg {
+    background: url('/img/cover.jpg') bottom no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.cover .trans {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/* cover */
+
+#main {
+    background: #162547;
+    color: #fff;
+    top: 0;
+    margin-left: 20%;
+    padding: 40px 20px 20px 20px;
+    padding-left: 60px;
+}

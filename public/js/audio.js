@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('a.chanson').click(function(e) {
+    $("#main").on("click", "a.chanson", function (e) {
         e.preventDefault();
         let audio = $("#audio");
         let f = $(this).attr('data-file');
