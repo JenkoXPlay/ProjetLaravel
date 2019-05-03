@@ -8,7 +8,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+   <!-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> -->
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.pjax.js') }}"></script>
+    <script src="{{ asset('js/audio.js') }}"></script>
+    <script src="{{ asset('js/search.js') }}"></script>
 </head>
 <body>
 
@@ -31,9 +37,15 @@
                                                         document.getElementById('logout-form').submit();">
                         Logout
                     </a></li>
+                <li><a data-pjax href="/nouvelle">Uploader une chanson</a></li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 </form>
+
+                <script type="text/javascript">
+                    $(document).pjax('[data-pjax] a, a[data-pjax]', '#main');
+                </script>
+
             @endguest
         </ul>
     </nav>
@@ -50,10 +62,6 @@
     <div id="main">
         @yield('content')
     </div>
-    <!-- Scripts -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/audio.js') }}"></script>
-    <script src="{{ asset('js/search.js') }}"></script>
 
 </body>
 </html>
