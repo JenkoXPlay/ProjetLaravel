@@ -4,6 +4,8 @@
 
     <h3>Go écouter des musiques !</h3>
 
-    @include('chansons')
+    <div class="contentTitre">
+        @include('chansons')
+    </div>
 
 @endsection

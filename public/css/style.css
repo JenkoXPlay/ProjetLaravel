@@ -138,4 +138,96 @@ body{
     margin-left: 20%;
     padding: 40px 20px 20px 20px;
     padding-left: 60px;
+    min-height: -webkit-fill-available;
 }
+
+.centered {
+    text-align: center;
+}
+
+.titleContent {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+/* formulaire */
+.inputHype {
+    border-radius: 4px;
+    padding: 7px;
+    width: 200px;
+    border: none;
+    margin: 5px;
+}
+
+.btnHype {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #162547;
+    font-weight: 500;
+    font-size: 1em; 
+    transition: 0.3s;
+    padding: 7px;
+    width: 200px;
+    border-radius: 4px;
+}
+.btnHype:hover {
+    cursor: pointer;
+    color: #fff;
+    background: transparent;
+}
+
+.linkLogin {
+    color: #fff;
+    text-decoration: underline;
+}
+.linkLogin:hover {
+    text-decoration: none;
+}
+/* formulaire */
+
+/* chanson */
+.contentTitre {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contentTitre .titre {
+    color: #fff;
+    text-align: center;
+    margin: 10px;
+}
+.contentTitre .titre span, i {
+    font-size: 0.8em;
+}
+.contentTitre .titre i a {
+    color: #fff;
+}
+.contentTitre .titre i a:hover {
+    text-decoration: none;
+}
+.contentTitre .titre .chanson {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: block;
+}
+.contentTitre .titre .chanson .cover {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+}
+.contentTitre .titre .chanson .goplay {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+    transition: 0.3s;
+}
+.contentTitre .titre .chanson:hover .goplay {
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 1;
+}
+/* chanson */
