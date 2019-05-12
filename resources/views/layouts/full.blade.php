@@ -8,7 +8,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/spectre-icons.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 
@@ -17,14 +16,9 @@
     <script src="{{ asset('js/jquery.pjax.js') }}"></script>
     <script src="{{ asset('js/audio.js') }}"></script>
     <script src="{{ asset('js/search.js') }}"></script>
+    <script src="{{ asset('js/form.js') }}"></script>
 </head>
 <body>
-
-<!-- <header>
-    <a data-pjax href="{{ url('/') }}">
-        {{ config('app.name', 'Laravel') }}
-    </a>
-</header> -->
 
 <!-- Authentication Links -->
 <div class="menu">

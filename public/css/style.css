@@ -9,6 +9,12 @@ body{
     font-family: Montserrat;
 }
 
+/* utiles */
+.width_50 {
+    width: 50%;
+}
+/* utiles */
+
 /* menu */
 .menu {
     z-index: 99999;

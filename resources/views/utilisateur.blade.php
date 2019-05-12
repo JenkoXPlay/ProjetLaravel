@@ -9,9 +9,9 @@
     @auth
         @if($utilisateur->id != \Illuminate\Support\Facades\Auth::id())
             @if(Auth::user()->jeLesSuit->contains($utilisateur->id))
-                <a href="/suivi/{{$utilisateur->id}}">Ne plus suivre</a>
+                <a data-pjax href="/suivi/{{$utilisateur->id}}">Ne plus suivre</a>
             @else
-                <a href="/suivi/{{$utilisateur->id}}">Suivre</a>
+                <a data-pjax href="/suivi/{{$utilisateur->id}}">Suivre</a>
             @endif
             <br />
         @endif

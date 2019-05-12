@@ -21,6 +21,10 @@ class MonControleur extends Controller
     }
 
     public function create(Request $request) {
+        $validatedData = $request->validate([
+            'nom' => 'required|min:6'
+        ]);
+
         $c = new Chanson();
         $c->nom = $request->input('nom');
         $c->style = $request->input('style');
